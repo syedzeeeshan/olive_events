@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-obsidian: #080A08;
+  --color-deep-forest: #101C15;
+  --color-olive: #263A2C;
+  --color-bone: #EAE5D8;
+  --color-warm-ivory: #F4F0E7;
+  --color-aged-gold: #B89B5E;
+}
+
+html {
+  background-color: var(--color-obsidian);
+  color: var(--color-warm-ivory);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  scroll-behavior: auto; /* Managed strictly by Lenis */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-obsidian);
+  color: var(--color-warm-ivory);
+  selection-background-color: var(--color-aged-gold);
+  selection-color: var(--color-obsidian);
+}
+
+::selection {
+  background-color: #B89B5E;
+  color: #080A08;
+}
+
+/* Lenis buttery scroll system rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Subtle architectural grain & atmospheric overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(234, 229, 216, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F4F0E7 0%, #B89B5E 60%, #8C7441 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-subtle {
+  border-color: rgba(234, 229, 216, 0.09);
+}
+
+.border-gold-subtle {
+  border-color: rgba(184, 155, 94, 0.25);
+}
+
+/* Restrained, non-garish gold shimmer */
+@keyframes goldShimmer {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.3; }
+}
+
+.animate-gold-pulse {
+  animation: goldShimmer 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar for desktop */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080A08;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 155, 94, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 155, 94, 0.6);
+}
+
+/* Accessible focus styling */
+:focus-visible {
+  outline: 2px solid #B89B5E;
+  outline-offset: 3px;
+}
